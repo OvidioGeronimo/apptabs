@@ -1,5 +1,7 @@
 {
   "name": "apptabs",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
