@@ -23,6 +23,7 @@ export class ProdutosService {
      }) 
     )
   }
+//isso é uma adaptação de preguiçoso
 
   getcategoriasAll() {
     return this .db.list(FirebasePath.CATEGORIAS).snapshotChanges().pipe(
