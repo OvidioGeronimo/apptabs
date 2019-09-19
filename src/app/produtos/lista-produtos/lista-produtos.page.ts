@@ -9,13 +9,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./lista-produtos.page.scss'],
 })
 export class ListaProdutosPage implements OnInit {
+  [x: string]: any;
   produtos: Observable<any[]>;
+  categorias: Observable<any[]>;
 
   constructor(private router:Router,
               private produtosService:ProdutosService) { }
 
   ngOnInit() {
     this.produtos = this.produtosService.getAll();
+    //veja que this.produtosservice se refere ao produtoservice.ts e o correto seria uma class para o proprio
+    this.categorias = this.produtosService.getcategoriasAll();
+
   }
 
 }
