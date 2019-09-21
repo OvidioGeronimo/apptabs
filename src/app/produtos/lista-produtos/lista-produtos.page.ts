@@ -12,6 +12,7 @@ export class ListaProdutosPage implements OnInit {
   [x: string]: any;
   produtos: Observable<any[]>;
   categorias: Observable<any[]>;
+  categoriaSelecionada: string;
 
   constructor(private router:Router,
               private produtosService:ProdutosService) { }
@@ -21,6 +22,13 @@ export class ListaProdutosPage implements OnInit {
     //veja que this.produtosservice se refere ao produtoservice.ts e o correto seria uma class para o proprio
     this.categorias = this.produtosService.getcategoriasAll();
 
+  }
+  buscarProdutos(){
+    this.produtos = this.produtosService.getAll(this.categoriaSelecionada);
+  }
+
+  adicionarProduto(produtoKey: string){
+    this.router.navigate(['pedido/carrinho/novo-item', produtoKey]);
   }
 
 }
