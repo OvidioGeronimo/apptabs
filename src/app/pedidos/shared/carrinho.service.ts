@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { FirebasePath } from './../../core/shared/firebase-path';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
@@ -30,5 +31,37 @@ export class CarrinhoService {
         return changes.length > 0
       })
     )
+  }
+
+  calcularTotal(preco: number, quantidade: number){
+    return preco * quantidade;
+  }
+  update(key:string,quantidade:number,total:number){
+    return this.getCarrinhoProdutosRef().update(key, {quantidade:quantidade, total :total});
+  }
+  remove(key: string){
+    return this.getCarrinhoProdutosRef().remove(key);
+  }
+  getAll(){
+    return this.getCarrinhoProdutosRef().snapshotChanges().pipe(
+    map(changes =>{
+      return changes.map(m=> ({key: m.payload.key, ...m.payload.val() }) )
+    })
+    )
+  }
+  getTotalPedido(){
+    return this.getCarrinhoProdutosRef().snapshotChanges().pipe(
+    map(changes =>{
+      return changes
+      .map( (m:any)=> (m.payload.val().total))
+      .reduce ( (prev:number, current:number) =>{
+        return prev + current;
+      })
+    })
+    )
+  }
+
+  clear(){
+
   }
 }
