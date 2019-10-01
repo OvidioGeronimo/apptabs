@@ -1,4 +1,4 @@
-import { map } from 'rxjs/operators';
+
 import { FirebasePath } from './../../core/shared/firebase-path';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
