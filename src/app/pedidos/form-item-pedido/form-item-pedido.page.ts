@@ -84,7 +84,7 @@ export class FormItemPedidoPage implements OnInit {
           this.toast.show('Produto adicionado com sucesso!!!');
           this.router.navigate(['/tabs/produtos']);
         });
-      
+
       }
 
     }

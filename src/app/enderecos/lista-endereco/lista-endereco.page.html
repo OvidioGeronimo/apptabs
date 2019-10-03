@@ -11,7 +11,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let endereco of enderecos | async">
       <ion-item (click)="setEnderecoSelecionado(endereco)">
-        <ion-label text-wrap>
+        <ion-label text-wrap><!--para quebrar o texto para caber na tela -->
           {{ getEnderecoText(endereco) }}
         </ion-label>
       </ion-item>
@@ -20,7 +20,7 @@
         <ion-item-option color="secondary" (click)="editar(endereco.key)">
           <ion-icon name="create"></ion-icon>
         </ion-item-option>
-        <ion-item-option color="danger" (click)="remover(endereco.key)">
+        <ion-item-option color="danger" (click)="remover(endereco)">
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
