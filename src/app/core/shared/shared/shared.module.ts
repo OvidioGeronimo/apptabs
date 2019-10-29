@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValorComponent } from '../valor/valor.component';
+import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
 
 @NgModule({
   declarations: [ValorComponent],

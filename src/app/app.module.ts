@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { DatePipe } from '@angular/common';
+import { ListaEnderecoPage } from './enderecos/lista-endereco/lista-endereco.page';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +30,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

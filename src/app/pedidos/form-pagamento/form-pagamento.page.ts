@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { truncate } from 'fs';
 import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
 
 @Component({
@@ -86,5 +85,5 @@ export class FormPagamentoPage implements OnInit {
      }
   }
 
-}
+
 

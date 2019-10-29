@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class ListaEnderecoPage implements OnInit {
   enderecos: Observable<any[]>;
   @Input()
-  selecionarEnderecos: boolean = false;
+  selecionarEndereco: boolean = false;
 
   constructor(private enderecoService: EnderecoService,
               private alert: AlertService,
@@ -52,7 +52,7 @@ export class ListaEnderecoPage implements OnInit {
     }
 
     setEnderecoSelecionado(endereco: any){
-      if(this.selecionarEnderecos) {
+      if(this.selecionarEndereco) {
         const enderecoText = this.getEnderecoText(endereco);
         this.modalController.dismiss({endereco: enderecoText});
       }
